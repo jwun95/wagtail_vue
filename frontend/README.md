@@ -1,4 +1,4 @@
-# google-login
+# wagtail_vue
 
 ## Build Setup
 
