@@ -14,6 +14,9 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
+    script: [
+      { src: 'https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2-nopolyfill.js' },
+    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
@@ -45,7 +48,6 @@ export default {
   auth: {
     strategies: {
       google: {
-        clientId: 'to be added',
         clientId: '853001689831-gr5dqsk1lerr5go8raqkjufbb57o421i.apps.googleusercontent.com',
         codeChallengeMethod: '',
         responseType: 'code',
@@ -53,6 +55,23 @@ export default {
           token: 'http://localhost:8000/social-login/google/',
           userInfo: 'http://localhost:8000/auth/user/'
         },
+      },
+      naver: {
+        scheme: 'oauth2',
+        endpoints: {
+          authorization: 'https://nid.naver.com/oauth2.0/authorize',
+          token: 'http://localhost:8000/social-login/google/',
+          userInfo: 'http://localhost:8000/auth/user/',
+          logout: false
+        },
+        token: {
+          property: 'access_token',
+          type: 'Bearer',
+          maxAge: 1800
+        },
+        grantType: 'authorization_code',
+        clientId: 'Q_OaN5zpEpmlzSmRJf3D',
+        autoLogout: false
       },
     }
   },
