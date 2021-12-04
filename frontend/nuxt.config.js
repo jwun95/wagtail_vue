@@ -60,7 +60,7 @@ export default {
         scheme: 'oauth2',
         endpoints: {
           authorization: 'https://nid.naver.com/oauth2.0/authorize',
-          token: 'http://localhost:8000/social-login/google/',
+          token: 'http://localhost:8000/social-login/naver/',
           userInfo: 'http://localhost:8000/auth/user/',
           logout: false
         },
